@@ -11,6 +11,19 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  inline-size: clamp(320px, 100vw, 700px);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  margin: 100px auto;
+  background-color: #1a1a1a;
+  background-image: repeating-linear-gradient(transparent, #d3d3d3 2px),
+                    repeating-linear-gradient(90deg, transparent, #d3d3d3 2px),
+                    linear-gradient(#e7e7e7, #1a1a1a);
+  background-size: cover;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-normal);
+  font-variation-settings: var(--font-weight-normal-variation);
 }
