@@ -13,12 +13,44 @@ const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () =>
+  iconButton.onclick = (event) => {
+    event.preventDefault();
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+  };
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
+  button.onclick = (event) => {
+    event.preventDefault();
+    toggleIsLiked(likeHeartArray[index], button);
+  };
+});
+
+const dialog = document.getElementById('dialog');
+
+document.getElementById('.save-button')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const dialog = document.getElementById('dialog');
+  if (dialog) {
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.removeAttribute('hidden');
+      dialog.style.display = 'block';
+    }
+  }
+});
+
+document.getElementById('dialog-ok-button')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const dialog = document.getElementById('dialog');
+  if (dialog) {
+    if (typeof dialog.close === 'function') {
+      dialog.close();
+    } else {
+      dialog.style.display = 'none';
+    }
+  }
 });
 
 function toggleIsLiked(heart, button) {
@@ -27,15 +59,16 @@ function toggleIsLiked(heart, button) {
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
+  const textEl = button.querySelector('.button__text');
+  if (!textEl) return;
+
+  if (heart.classList.contains('is-liked')) {
+    setTimeout(() => {
+      textEl.textContent = 'Unlike';
+    }, 500);
   } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
+    setTimeout(() => {
+      textEl.textContent = 'Like';
+    }, 500);
   }
 }
