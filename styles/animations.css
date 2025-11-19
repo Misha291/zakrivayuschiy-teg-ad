@@ -9,22 +9,95 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+.like-icon .core {
+  fill: #ffffff;
+  transition: fill 0.3s linear 0.03s;
+}
 
+.like-icon .main-body {
+  fill: #ffffff;
+  transition: fill 0.3s linear;
+}
 
-@keyframes scale {
-	from {
-		scale: 1;
-	}
-	to {
-		scale: 1.25;
-	}
+.like-icon .contour {
+  fill: #000000;
+  transition: fill 0.1s linear;
+}
+
+.like-icon .heart {
+  transform-origin: center;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon:hover .main-body {
+  fill: #000000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: #000000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: #ff0000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: #ff0000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #ff0000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: #ff0000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: #ff0000;
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1 alternate;
+}
+
+@keyframes heart {
+  to {
+    transform: scale(1.5);
+  }
+  from {
+    transform: scale(1);
+  }
 }
 
 @keyframes sparks {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes arrow {
+  to {
+    transform: translate(4px);
+  }
+  from {
+    transform: translate(0);
+  }
 }
