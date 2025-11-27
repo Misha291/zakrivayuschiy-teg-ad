@@ -326,7 +326,6 @@
     
     <script src="./scripts/like.js"></script>
     <script>
-      // Исправление для предотвращения перезагрузки страницы
       document.addEventListener('DOMContentLoaded', function() {
         const saveButton = document.getElementById('save-button');
         const dialogOkButton = document.getElementById('dialog-ok-button');
@@ -346,7 +345,6 @@
           });
         }
         
-        // Предотвращаем отправку формы если кнопки находятся внутри формы
         const buttons = document.querySelectorAll('button[type="button"]');
         buttons.forEach(button => {
           button.addEventListener('click', function(e) {
