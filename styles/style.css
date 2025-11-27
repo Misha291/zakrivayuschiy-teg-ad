@@ -363,7 +363,7 @@
   mix-blend-mode: difference;
 }
 
-@media (width < 380px) {
+@media (width < 380px) {                      /*когда ширина экрана меньше 380 px тогда для всех элементов с классом .save_button применяем свойства:*/
   .save_button {
     flex-direction: column;
     align-items: center;
