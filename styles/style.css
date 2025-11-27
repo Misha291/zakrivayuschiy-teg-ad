@@ -112,7 +112,7 @@
   top: 25px;
 }
 
-@supports (
+@supports (                                              /*проверка поддержки браузером (также как и оператор if) c использованием or*/
   (-webkit-text-stroke: 1px var(--text-stroke)) or
   (text-stroke: 1px var(--text-stroke))
 ) {
