@@ -18,6 +18,7 @@
   min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--main-typeface), sans-serif;
+  font-variation-settings: 'wght' var(--body-font-weight);
 }
 
 .header {
@@ -76,7 +77,7 @@
 .section_title {
   font-family: var(--main-typeface), sans-serif;
   font-size: var(--heading-font-size);
-  font-weight: var(--heading-font-weight);
+  font-variation-settings: 'wght' var(--heading-font-weight);
   padding: 4px 10px 6px;
   border-bottom: var(--stroke-thickness) solid var(--outline-primary);
   color: var(--text-primary);
@@ -165,7 +166,7 @@
 .content_text {
   font-family: var(--main-typeface), sans-serif;
   font-size: var(--body-font-size);
-  font-weight: var(--body-font-weight);
+  font-variation-settings: 'wght' var(--body-font-weight);
   line-height: 21px;
   color: var(--text-primary);
 }
