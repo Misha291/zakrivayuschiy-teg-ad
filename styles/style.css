@@ -116,7 +116,7 @@
   (-webkit-text-stroke: 1px var(--text-stroke)) or
   (text-stroke: 1px var(--text-stroke))
 ) {
-  .img_label {
+  .img_label {                                           /*ЕСЛИ браузер поддерживает text-stroke (в любой форме), ТО для всех элементов с классом .img_label: Убрать текстовую тень (text-shadow: none) и Применить обводку текста толщиной 1px цветом из переменной --text-stroke*/
     text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke);
     text-stroke: 1px var(--text-stroke);
