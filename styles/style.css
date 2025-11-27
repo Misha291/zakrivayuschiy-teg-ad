@@ -12,9 +12,9 @@
 
 .page {
   background-color: var(--page-background);
-  background-image: var(--page-texture);
-  background-size: cover;
-  background-attachment: fixed;
+  background-image: var(--page-texture);        /*создание сетчатого фона*/
+  background-size: cover;                       /*растягивает фон на всю площадь страницы*/
+  background-attachment: fixed;                /*фон остается неподвижным при прокрутке*/
   min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--main-typeface), sans-serif;
